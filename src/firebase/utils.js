@@ -21,7 +21,7 @@ export const createUserProfileDocument = async (userAuth, additionalData) => {
   
   console.log(snapShot)
 
-  if(!snapShot.exists) {
+  if (!snapShot.exists) {
     const { displayName, email } = userAuth
     const createdAt = new Date()
     try {
