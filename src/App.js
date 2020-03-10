@@ -6,10 +6,29 @@ import HomePage from './pages/home/home.jsx'
 import ShopPage from './pages/shop/shop.jsx'
 import Header from './components/header/header.jsx'
 import UserAuth from './pages/user-auth/user-auth.jsx'
+import { auth } from './firebase/utils.js'
 
-function App() {
-  return (
-    <div>
+class App extends React.Component {
+  constructor() {
+    super()
+
+    this.state = {
+      currentUser: null
+    }
+  }
+
+  componentDidMount() {
+    auth.onAuthStateChanged(user => {
+      this.setState({ currentUser: user})
+
+      console.log(user)
+    })
+
+  }
+
+  render() {
+    return(
+      <div>
       <Header />
       <Switch>
         <Route exact path='/' component={HomePage} />
@@ -21,7 +40,8 @@ function App() {
         <Route exact path='/prints' component={Prints} /> */}
       </Switch>
     </div>
-  );
+    )
+  }
 }
 
 export default App;
