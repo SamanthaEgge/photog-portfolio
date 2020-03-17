@@ -3,10 +3,10 @@ import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
 
 import { auth } from '../../firebase/utils.js'
-
-import { ReactComponent as Logo } from '../../assets/w.svg'
+import CartIcon from '../cart-icon/cart-icon.jsx'
 
 import './header.scss'
+import { ReactComponent as Logo } from '../../assets/w.svg'
 
 const Header = ({ currentUser }) => (
   <div className='header'>
@@ -29,6 +29,7 @@ const Header = ({ currentUser }) => (
           </Link>
         )
       }
+      <CartIcon />
     </div>
   </div>
 )
