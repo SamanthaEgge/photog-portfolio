@@ -10,7 +10,7 @@ import CartItem from '../cart-item/cart-item'
 
 import './cart-dropdown.scss'
 
-const CartDropdown = ({ cartItems, history }) => (
+const CartDropdown = ({ cartItems, history, dispatch }) => (
   <div className='cart-dropdown'>
     <div className='cart-items'>
       {cartItems.length ? (
@@ -31,4 +31,4 @@ const mapStateToProps = createStructuredSelector ({
   cartItems: selectCartItems
 })
 
-export default withRouter(connect(mapStateToProps, null)(CartDropdown))
+export default withRouter(connect(mapStateToProps)(CartDropdown))
