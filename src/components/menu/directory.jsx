@@ -11,7 +11,7 @@ const Directory = ({ sections }) => {
   return (
     <div className='directory-menu'>
       {
-        this.state.sections.map(({id, ...sectionProps}) => (
+        sections.map(({id, ...sectionProps}) => (
           <MenuItem key={id} {...sectionProps} />
       ))}
     </div>
